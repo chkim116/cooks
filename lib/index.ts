@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 
-export const useFormInput = () => {
+export const useFormInput = (initialValue?: object) => {
     const [form, setForm] = useState({});
     const onChange = useCallback(
         (e: React.FormEvent<HTMLFormElement>) => {
@@ -13,8 +13,10 @@ export const useFormInput = () => {
     return [form, onChange, setForm] as const;
 };
 
-export const useInput = () => {
-    const [value, setValue] = useState<string | number>();
+type InitialValue = string | number;
+
+export const useInput = (initialValue: InitialValue) => {
+    const [value, setValue] = useState<InitialValue>(initialValue);
     const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
         setValue(value);

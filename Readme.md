@@ -25,6 +25,7 @@ const onReset = () => {
 
 console.log(form);
 // {email : '입력값', password : '입력값'}
+setForm({})
 // setForm({}) = 초기화
 ```
 
@@ -33,7 +34,7 @@ console.log(form);
 Only Input Event
 
 ```c
-const [text, onText, setText] = useInput();
+const [text, onText, setText] = useInput(0);
 
 <input
     type="number"
@@ -42,8 +43,9 @@ const [text, onText, setText] = useInput();
     placeholder="email" />
 
 console.log(text);
-// '입력값'
-// setText('') = 초기화
+// 입력숫자
+setText(0)
+// 0
 ```
 
 #### 3.useToggle()
