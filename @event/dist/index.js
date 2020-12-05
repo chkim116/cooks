@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.useFindId = exports.useToggle = exports.useInput = exports.useFormInput = void 0;
 const react_1 = require("react");
-const useFormInput = () => {
+const useFormInput = (initialValue) => {
     const [form, setForm] = react_1.useState({});
     const onChange = react_1.useCallback((e) => {
         const { name, value } = e.target;
@@ -11,8 +11,8 @@ const useFormInput = () => {
     return [form, onChange, setForm];
 };
 exports.useFormInput = useFormInput;
-const useInput = () => {
-    const [value, setValue] = react_1.useState();
+const useInput = (initialValue) => {
+    const [value, setValue] = react_1.useState(initialValue);
     const onChange = react_1.useCallback((e) => {
         const { value } = e.target;
         setValue(value);
