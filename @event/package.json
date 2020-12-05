@@ -1,6 +1,6 @@
 {
-    "name": "@melonhook/event",
-    "version": "1.0.1",
+    "name": "@cooksmelon/event",
+    "version": "1.0.2",
     "description": "React Form Hooks!",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

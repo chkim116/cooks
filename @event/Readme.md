@@ -1,4 +1,4 @@
-# @melonhook/event
+# @cooksmelon/event
 
 ---
 
@@ -7,16 +7,18 @@
 ## Install
 
 ```c
-$npm i @melonhook/event
-$yarn add @melonhook/event
+
+$npm i @cooksmelon/event
+$yarn add @cooksmelon/event
+
 ```
 
 <br />
 <br />
 ## Using
 ```c
-import { useFindId, useFormInput, useInput, useToggle } from "@melonhook/event";
-````
+import { useFindId, useFormInput, useInput, useToggle } from "@cooksmelon/event";
+```
 
 <br />
 
