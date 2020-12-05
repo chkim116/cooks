@@ -74,9 +74,7 @@ export const useUpAxios = <T, K>(url: string, data: T, option?: K) => {
                         setGetData(res.data)
                     );
                 }
-                await Axios.put(url, data, option).then((res) =>
-                    setGetData(res.data)
-                );
+                await Axios.put(url, data).then((res) => setGetData(res.data));
                 setLoading(false);
             } catch (err) {
                 console.log(err);
