@@ -1,13 +1,33 @@
-## @Cooks/event
+# @melonhook/event
 
 ---
 
-#### 1.useFormInput
+<br />
 
-Only Form Event
+## Install
 
 ```c
-const [form, onChange, setForm] = useFormInput();
+$npm i @melonhook/event
+$yarn add @melonhook/event
+```
+
+<br />
+<br />
+## Using
+```c
+import { useFindId, useFormInput, useInput, useToggle } from "@melonhook/event";
+````
+
+<br />
+
+#### 1.useFormInput
+
+<p> <strong> Only Form Event </strong></p>
+You can be set intialValue
+<br />
+
+```c
+const [form, onChange, setForm] = useFormInput({email: "", password: ""});
 const onReset = () => {
         setForm({});
     };
@@ -18,20 +38,25 @@ const onReset = () => {
         type="password"
         name="password"
         placeholder="password" />
-    <button type="button" onClick={onReset}>
-            리셋
+    <button type="reset" onClick={onReset}>
+            reset
     </button>
 </form>
 
 console.log(form);
-// {email : '입력값', password : '입력값'}
+// {email : value, password : value}
 setForm({})
-// setForm({}) = 초기화
+// set value
 ```
+
+<br />
+<br />
 
 #### 2.useInput()
 
-Only Input Event
+<p> <strong> Only Input Event </strong></p>
+You have to be set intialValue
+<br />
 
 ```c
 const [text, onText, setText] = useInput(0);
@@ -43,28 +68,40 @@ const [text, onText, setText] = useInput(0);
     placeholder="email" />
 
 console.log(text);
-// 입력숫자
+// value
 setText(0)
 // 0
 ```
 
+<br />
+<br />
+
 #### 3.useToggle()
 
+<br />
+
 Toggle handler
+<br />
 
 ```c
 const [toggle, onClick] = useToggle(false);
 
-<button onClick={onClick} type="button">토글링</button>
+<button onClick={onClick} type="button">toggle</button>
 
 console.log(toggle);
 // !prev
 // ex) false ? true : false
 ```
 
+<br />
+<br />
+
 #### 4.useFindId()
 
+<br />
+
 Find data-id
+<br />
 
 ```c
 const [find, onFind] = useFindId();
