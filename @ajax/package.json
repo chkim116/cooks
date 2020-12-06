@@ -25,17 +25,19 @@
         "url": "https://github.com/chkim116/cooks/issues"
     },
     "peerDependencies": {
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
         "@types/react": "^17.0.0",
-        "@types/react-dom": "^17.0.0"
+        "@types/react-dom": "^17.0.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
     },
     "dependencies": {
         "@types/react": "^17.0.0",
         "@types/react-dom": "^17.0.0",
+        "@types/react-redux": "^7.1.11",
         "axios": "^0.21.0",
         "react": "^17.0.1",
-        "react-dom": "^17.0.1"
+        "react-dom": "^17.0.1",
+        "react-redux": "^7.2.2"
     },
     "devDependencies": {},
     "homepage": "https://github.com/chkim116/cooks/tree/master/%40ajax#readme"
