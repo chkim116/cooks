@@ -9,15 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.delAxios = exports.useUpAxios = exports.useGetAxios = exports.PostAxios = void 0;
+exports.useDelAxios = exports.useUpAxios = exports.useGetAxios = exports.usePostAxios = exports.useDisSubmit = void 0;
 const axios_1 = require("axios");
 const react_1 = require("react");
+const react_2 = require("react");
+const react_redux_1 = require("react-redux");
+const dispatch = react_redux_1.useDispatch();
+const useDisSubmit = (dispatchName, value) => {
+    const onSubmit = react_2.useCallback((e) => {
+        e.preventDefault();
+        dispatch(dispatchName(value));
+    }, [value, dispatch, dispatchName]);
+    return [onSubmit];
+};
+exports.useDisSubmit = useDisSubmit;
 function isOwnOptions(option) {
     if (option !== undefined) {
         return true;
     }
 }
-const PostAxios = (url, data, option) => {
+const usePostAxios = (url, data, option) => {
     const [getData, setGetData] = react_1.useState({});
     const [loading, setLoading] = react_1.useState(false);
     react_1.useEffect(() => {
@@ -40,7 +51,7 @@ const PostAxios = (url, data, option) => {
     }, [url, option]);
     return [loading, getData];
 };
-exports.PostAxios = PostAxios;
+exports.usePostAxios = usePostAxios;
 const useGetAxios = (url, option) => {
     const [getData, setGetData] = react_1.useState({});
     const [loading, setLoading] = react_1.useState(false);
@@ -75,7 +86,7 @@ const useUpAxios = (url, data, option) => {
                 if (isOwnOptions(option)) {
                     yield axios_1.default.put(url, data, option).then((res) => setGetData(res.data));
                 }
-                yield axios_1.default.put(url, data, option).then((res) => setGetData(res.data));
+                yield axios_1.default.put(url, data).then((res) => setGetData(res.data));
                 setLoading(false);
             }
             catch (err) {
@@ -89,7 +100,7 @@ const useUpAxios = (url, data, option) => {
     return [loading, getData];
 };
 exports.useUpAxios = useUpAxios;
-const delAxios = (url, option) => {
+const useDelAxios = (url, option) => {
     const [getData, setGetData] = react_1.useState({});
     const [loading, setLoading] = react_1.useState(false);
     react_1.useEffect(() => {
@@ -97,9 +108,9 @@ const delAxios = (url, option) => {
             setLoading(true);
             try {
                 if (isOwnOptions(option)) {
-                    yield axios_1.default.put(url, option).then((res) => setGetData(res.data));
+                    yield axios_1.default.delete(url, option);
                 }
-                yield axios_1.default.put(url, option).then((res) => setGetData(res.data));
+                yield axios_1.default.delete(url);
                 setLoading(false);
             }
             catch (err) {
@@ -112,4 +123,4 @@ const delAxios = (url, option) => {
     }, [url, option]);
     return [loading, getData];
 };
-exports.delAxios = delAxios;
+exports.useDelAxios = useDelAxios;

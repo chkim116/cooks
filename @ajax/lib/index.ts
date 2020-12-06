@@ -1,5 +1,21 @@
 import Axios from "axios";
 import { useEffect, useState } from "react";
+import { Dispatch, useCallback } from "react";
+import { useDispatch } from "react-redux";
+
+const dispatch = useDispatch();
+
+export const useDisSubmit = <T>(dispatchName: Dispatch<any>, value: T) => {
+    const onSubmit = useCallback(
+        (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            dispatch(dispatchName(value));
+        },
+        [value, dispatch, dispatchName]
+    );
+
+    return [onSubmit];
+};
 
 function isOwnOptions<T>(option: T): boolean | undefined {
     if (option !== undefined) {
