@@ -45,7 +45,7 @@ const useFindId = () => {
     return [findId, onClick];
 };
 exports.useFindId = useFindId;
-const useScroll = (viewPort, { length, initial, count, limit }, query, isLoading) => {
+const useScroll = ({ viewPort, length, initial, count, limit, query, isLoading, }) => {
     const [display, setDisplay] = react_1.useState(initial);
     const lastElement = react_1.useCallback((node) => {
         if (isLoading ||
@@ -70,7 +70,7 @@ const useScroll = (viewPort, { length, initial, count, limit }, query, isLoading
     return [lastElement, display];
 };
 exports.useScroll = useScroll;
-const useMore = ({ length, initial, count, limit }, query, isLoading) => {
+const useMore = ({ length, initial, count, limit, query, isLoading, }) => {
     const [display, setDisplay] = react_1.useState(initial);
     const onClick = react_1.useCallback(() => {
         if (display === limit || length < display || isLoading)
