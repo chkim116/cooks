@@ -48,6 +48,19 @@ export const useFind = () => {
     return [findData, onClick] as const;
 };
 
+export const useFindId = () => {
+    const [findId, setFindId] = useState<string | undefined>("");
+    const onClick = useCallback(
+        (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+            const { id } = e.currentTarget.dataset;
+            setFindId(id);
+        },
+        []
+    );
+
+    return [findId, onClick] as const;
+};
+
 type Props = {
     length: number;
     initial: number;
