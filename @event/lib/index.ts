@@ -62,18 +62,24 @@ export const useFindId = () => {
 };
 
 type Props = {
+    viewPort?: any;
     length: number;
     initial: number;
     count: number;
     limit: number;
+    isLoading?: boolean;
+    query?: any;
 };
 
-export const useScroll = (
-    viewPort: any,
-    { length, initial, count, limit }: Props,
-    query?: any,
-    isLoading?: boolean
-): any => {
+export const useScroll = ({
+    viewPort,
+    length,
+    initial,
+    count,
+    limit,
+    query,
+    isLoading,
+}: Props): any => {
     const [display, setDisplay] = useState(initial);
     const lastElement = useCallback(
         (node) => {
@@ -104,13 +110,15 @@ export const useScroll = (
     return [lastElement, display];
 };
 
-export const useMore = (
-    { length, initial, count, limit }: Props,
-    query?: any,
-    isLoading?: boolean
-): any => {
+export const useMore = ({
+    length,
+    initial,
+    count,
+    limit,
+    query,
+    isLoading,
+}: Props): any => {
     const [display, setDisplay] = useState(initial);
-
     const onClick = useCallback(() => {
         if (display === limit || length < display || isLoading) return;
         setDisplay((prev: number) => (prev += count));
