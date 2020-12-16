@@ -17,7 +17,8 @@ $yarn add @cooksmelon/event
 ## Using
 
 ```c
-import { useFindId, useFind, useFormInput, useInput, useToggle, useMore, useScroll } from "@cooksmelon/event";
+import { useFindId, useFind, useFormInput, useInput, useToggle } from "@cooksmelon/event";
+import { useMore, useScroll } from "@cooksmelon/event";
 ```
 
 <br />
@@ -132,6 +133,9 @@ const [findId, onFindId] = useFindId();
 ```
 
 <br />
+
+[Total Example](https://codesandbox.io/s/loving-napier-hrqdi?file=/src/App.js)
+
 <br />
 
 ---
