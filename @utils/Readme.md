@@ -34,13 +34,7 @@ import { useReplace, useKtime } from "@cooksmelon/utils";
 <p>정규표현식을 제거합니다.</p>
 
 ```c
-import {useReplace} from "@cooksmelon/utils"
-
-const useReplace = (string) => {
-  const filter = string.replace(/<[^>]*>?/gm, "");
-
-  return filter;
-};
+import { useReplace } from "@cooksmelon/utils"
 
 const filterString = useReplace("<p>please filter</p>");
 

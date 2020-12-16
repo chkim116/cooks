@@ -12,7 +12,11 @@
         "url": "git+https://github.com/chkim116/cooks.git"
     },
     "keywords": [
-        "react"
+        "react",
+        "utils",
+        "filter",
+        "time",
+        "koreantime"
     ],
     "author": "chkim116",
     "license": "MIT",
