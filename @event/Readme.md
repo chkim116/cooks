@@ -187,11 +187,17 @@ useEffect(() => {
 #### Props
 
 **\*viewPort** : ViewPort is wrapper
+<br />
 **\*length** : Current length of data.
+<br />
 **\*initial** : InitialNumber
+<br />
 **\*count** : InitialNumber + count
+<br />
 **\*limit**: It is limit
+<br />
 query : Reset when query changes
+<br />
 isLoading : Will not scroll when loading
 
 <br />
@@ -244,8 +250,13 @@ console.log(find);
 #### Props
 
 **\*length** : Current length of data.
+<br />
 **\*initial** : InitialNumber
+<br />
 **\*count** : InitialNumber + count
+<br />
 **\*limit**: It is limit
+<br />
 query : Reset when query changes
+<br />
 isLoading : Will not scroll when loading
