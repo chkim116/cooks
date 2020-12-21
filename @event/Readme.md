@@ -18,7 +18,7 @@ $yarn add @cooksmelon/event
 
 ```c
 import { useFindId, useFind, useFormInput, useInput, useToggle } from "@cooksmelon/event";
-import { useMore, useScroll } from "@cooksmelon/event";
+import { useMore, useScroll, useScrollTop } from "@cooksmelon/event";
 ```
 
 <br />
@@ -26,12 +26,11 @@ import { useMore, useScroll } from "@cooksmelon/event";
 ## useFormInput
 
 <p> <strong> Only Form or Input Event </strong></p>
-You can be set intialValue
 <br />
 <br />
 
 ```c
-const [form, onChange, setForm] = useFormInput({email: "", password: ""});
+const [form, onChange, setForm] = useFormInput();
 
 // if wanna reset
 const onReset = () => {
@@ -53,6 +52,12 @@ console.log(form);
 // {email : value, password : value}
 setForm({})
 // reset value
+
+if you wannabe setup initialValue you have to use UseEffect
+
+useEffect(() => {
+    setForm({email: "", password: ""})
+}, [])
 ```
 
 <br />
@@ -264,3 +269,27 @@ console.log(find);
 query : Reset when query changes
 <br />
 isLoading : Will not scroll when loading
+
+<br/>
+<br/>
+
+---
+
+**1.1.0v**
+
+## useScrollTop
+
+<p> <strong>When first render, scroll top</strong></p>
+<br />
+
+```c
+import { useScrollTop } from "@cooksmelon/event"
+
+const PageComponents = () => {
+    useScrollTop()
+
+    return ( ...)
+}
+```
+
+it is automatically scroll to top

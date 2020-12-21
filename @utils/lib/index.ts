@@ -12,7 +12,7 @@ export const useKtime = () => {
     return new Date(timestamp);
 };
 
-export const useClipboard = (e: any) => {
+export const useClip = (e: any) => {
     const [message, setMessage] = useState(false);
     const text = document.createElement("textarea");
     document.body.appendChild(text);
