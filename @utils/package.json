@@ -1,6 +1,6 @@
 {
     "name": "@cooksmelon/utils",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "filtering",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -25,9 +25,13 @@
     },
     "homepage": "https://github.com/chkim116/cooks/tree/master/%40utils",
     "peerDependencies": {
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
         "@types/react": "^17.0.0",
-        "@types/react-dom": "^17.0.0"
+        "@types/react-dom": "^17.0.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "dependencies": {
+        "@types/react": "^17.0.0",
+        "react": "^17.0.1"
     }
 }

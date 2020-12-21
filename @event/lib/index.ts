@@ -130,3 +130,9 @@ export const useMore = ({
 
     return [onClick, display];
 };
+
+export const useScrollTop = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+};
