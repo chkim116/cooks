@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
-export const useFormInput = (initialValue?: object | undefined) => {
-    const [form, setForm] = useState({});
+export const useFormInput = (initialValue?: object | any | undefined) => {
+    const [form, setForm] = useState(initialValue);
     const onChange = useCallback(
         (e: React.FormEvent<HTMLFormElement | HTMLInputElement>) => {
             const { name, value } = e.target as HTMLInputElement;
