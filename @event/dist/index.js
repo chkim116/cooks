@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useMore = exports.useScroll = exports.useFindId = exports.useFind = exports.useToggle = exports.useInput = exports.useFormInput = void 0;
+exports.useScrollTop = exports.useMore = exports.useScroll = exports.useFindId = exports.useFind = exports.useToggle = exports.useInput = exports.useFormInput = void 0;
 const react_1 = require("react");
-const useFormInput = (initialValue) => {
+const useFormInput = () => {
     const [form, setForm] = react_1.useState({});
     const onChange = react_1.useCallback((e) => {
         const { name, value } = e.target;
@@ -83,3 +83,9 @@ const useMore = ({ length, initial, count, limit, query, isLoading, }) => {
     return [onClick, display];
 };
 exports.useMore = useMore;
+const useScrollTop = () => {
+    react_1.useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+};
+exports.useScrollTop = useScrollTop;

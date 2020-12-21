@@ -1,11 +1,11 @@
 {
     "name": "@cooksmelon/utils",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "filtering",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "tsc"
     },
     "repository": {
         "type": "git",

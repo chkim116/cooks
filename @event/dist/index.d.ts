@@ -1,5 +1,5 @@
 /// <reference types="react" />
-export declare const useFormInput: (initialValue?: object | undefined) => readonly [{}, (e: React.FormEvent<HTMLFormElement | HTMLInputElement>) => void, import("react").Dispatch<import("react").SetStateAction<{}>>];
+export declare const useFormInput: () => readonly [{}, (e: React.FormEvent<HTMLFormElement | HTMLInputElement>) => void, import("react").Dispatch<import("react").SetStateAction<{}>>];
 declare type InitialValue = string | number;
 export declare const useInput: (initialValue: InitialValue) => readonly [string | number, (e: React.ChangeEvent<HTMLInputElement>) => void, import("react").Dispatch<import("react").SetStateAction<string | number>>];
 export declare const useToggle: (boolean: boolean) => readonly [boolean, () => void];
@@ -16,4 +16,5 @@ declare type Props = {
 };
 export declare const useScroll: ({ viewPort, length, initial, count, limit, query, isLoading, }: Props) => any;
 export declare const useMore: ({ length, initial, count, limit, query, isLoading, }: Props) => any;
+export declare const useScrollTop: () => void;
 export {};
